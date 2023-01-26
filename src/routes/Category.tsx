@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import DrinkItem from '../components/items/DrinkItem';
-import DrinkItemSkeleton from '../components/items/DrinkItem.skeleton';
+import DrinkItemSkeleton from '../components/skeletons/DrinkItem.skeleton';
 import useCategory from '../hooks/queries/useCategory';
 
 const Category = () => {

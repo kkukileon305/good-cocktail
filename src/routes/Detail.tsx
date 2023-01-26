@@ -1,12 +1,13 @@
 import { useParams } from 'react-router-dom';
 import Category from '../components/buttons/CategoryBtn';
+import DetailSkeleton from '../components/skeletons/Detail.skeleton';
 import useDetail from '../hooks/queries/useDetail';
 
 const Detail = () => {
   const { idDrink } = useParams();
   const { data: response, isLoading } = useDetail(idDrink || '12345');
 
-  if (!response || isLoading) return <div>Skeleton...</div>;
+  if (!response || isLoading) return <DetailSkeleton />;
 
   if (!response.drinks) return <div>No</div>;
 
