@@ -6,6 +6,10 @@ export interface LookupFullResponse {
   drinks: Drink[];
 }
 
+export interface RandomResponse {
+  drinks: Drink[];
+}
+
 export interface Ingredient {
   idIngredient: string;
   strIngredient: string;
