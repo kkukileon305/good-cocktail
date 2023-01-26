@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import ErrorPage from '../components/errors/ErrorPage';
+import Category from '../routes/Category';
 import Detail from '../routes/Detail';
 import Home from '../routes/Home';
 import Layout from '../routes/Layout';
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/detail/:idDrink',
         element: <Detail />,
+      },
+      {
+        path: '/category/:strCategory',
+        element: <Category />,
       },
     ],
     errorElement: <ErrorPage />,

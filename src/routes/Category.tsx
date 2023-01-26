@@ -1,23 +1,15 @@
-import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import DrinkItem from '../components/items/DrinkItem';
 import DrinkItemSkeleton from '../components/items/DrinkItem.skeleton';
-import useFirstLetter from '../hooks/useFirstLetter';
-import alphabets from '../lib/alphabets';
+import useCategory from '../hooks/useCategory';
 
-const Home = () => {
-  const [firstLetter, setFirstLetter] = useState(alphabets[0]);
-  const { data: response, isLoading } = useFirstLetter(firstLetter);
+const Category = () => {
+  const { strCategory } = useParams();
+  const { data: response, isLoading } = useCategory(strCategory || 'Cocktail');
 
   return (
     <div>
-      <h2 className='font-bold text-xl'>Search By First Letter!</h2>
-      <ul className='my-8 flex justify-center gap-4 flex-wrap'>
-        {alphabets.map(alphabet => (
-          <li key={alphabet} onClick={() => setFirstLetter(alphabet)}>
-            <button className='w-[24px] h-[24px] flex justify-center items-center rounded-full bg-slate-400'>{alphabet}</button>
-          </li>
-        ))}
-      </ul>
+      <h2>{strCategory}</h2>
 
       {isLoading ? (
         <ul className='flex flex-wrap gap-4 justify-between'>
@@ -40,5 +32,4 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;
+export default Category;

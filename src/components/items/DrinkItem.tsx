@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Drink } from '../../types/response';
+import { Drink, ShortDrink } from '../../types/response';
 
-const DrinkItem = ({ drink }: { drink: Drink }) => {
+const DrinkItem = ({ drink }: { drink: Drink | ShortDrink }) => {
   return (
     <li className='border rounded w-1/5 min-w-[200px]'>
       <Link to={`/detail/${drink.idDrink}`} className='p-2 block'>
