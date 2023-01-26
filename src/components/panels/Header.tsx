@@ -28,7 +28,7 @@ const Header = () => {
           </h1>
 
           <Link to={'/search'} className='flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
-            <p className='w-[100px] text-left'>검색...</p>
+            <p className='w-[100px] text-left'>Search...</p>
             <BsSearch />
           </Link>
         </div>
@@ -58,7 +58,7 @@ const Header = () => {
           {isScrolled && (
             <div className='flex items-center gap-8'>
               <Link to={'/search'} className='flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
-                <p className='w-[100px] text-left'>검색...</p>
+                <p className='w-[100px] text-left'>Search...</p>
                 <BsSearch />
               </Link>
             </div>

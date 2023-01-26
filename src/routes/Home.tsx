@@ -14,7 +14,7 @@ const Home = () => {
       <ul className='my-8 flex justify-center gap-4 flex-wrap'>
         {alphabets.map(alphabet => (
           <li key={alphabet} onClick={() => setFirstLetter(alphabet)}>
-            <button className='w-[24px] h-[24px] text-white flex justify-center items-center rounded-full bg-slate-400'>{alphabet}</button>
+            <button className={`w-[24px] h-[24px] font-bold border border-slate-400 flex justify-center items-center rounded-full ${firstLetter === alphabet ? 'bg-transparent text-slate-400' : 'bg-slate-400 text-white'}`}>{alphabet}</button>
           </li>
         ))}
       </ul>
