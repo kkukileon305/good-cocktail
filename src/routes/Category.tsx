@@ -9,7 +9,7 @@ const Category = () => {
 
   return (
     <div>
-      <h2 className='font-bold text-2xl mb-8'>{strCategory}</h2>
+      <h2 className='font-bold text-2xl mb-8 text-center'>{strCategory}</h2>
 
       {isLoading ? (
         <ul className='flex flex-wrap gap-4 justify-center'>

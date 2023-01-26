@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <div>
-      <h2 className='font-bold text-xl'>Search By First Letter!</h2>
+      <h2 className='font-bold text-xl text-center'>Search By First Letter, {firstLetter}</h2>
       <ul className='my-8 flex justify-center gap-4 flex-wrap'>
         {alphabets.map(alphabet => (
           <li key={alphabet} onClick={() => setFirstLetter(alphabet)}>
