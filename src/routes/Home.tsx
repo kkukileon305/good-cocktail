@@ -20,7 +20,7 @@ const Home = () => {
       </ul>
 
       {isLoading ? (
-        <ul className='flex flex-wrap gap-4 justify-between'>
+        <ul className='flex flex-wrap gap-4 justify-center'>
           <DrinkItemSkeleton />
           <DrinkItemSkeleton />
           <DrinkItemSkeleton />
@@ -31,7 +31,7 @@ const Home = () => {
           <DrinkItemSkeleton />
         </ul>
       ) : (
-        <ul className='flex flex-wrap gap-4 justify-between'>
+        <ul className='flex flex-wrap gap-4 justify-center'>
           {response?.drinks.map(drink => (
             <DrinkItem key={drink.idDrink} drink={drink} />
           ))}
