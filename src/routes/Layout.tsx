@@ -6,7 +6,9 @@ const Layout = () => {
     <>
       <main className='bg-white dark:bg-slate-800 min-h-screen text-slate-900 dark:text-white'>
         <Header />
-        <Outlet />
+        <div className='max-w-[1260px] mx-auto p-4'>
+          <Outlet />
+        </div>
       </main>
     </>
   );
