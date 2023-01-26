@@ -14,7 +14,7 @@ const Home = () => {
       <ul className='my-8 flex justify-center gap-4 flex-wrap'>
         {alphabets.map(alphabet => (
           <li key={alphabet} onClick={() => setFirstLetter(alphabet)}>
-            <button className='w-[24px] h-[24px] flex justify-center items-center rounded-full bg-slate-400'>{alphabet}</button>
+            <button className='w-[24px] h-[24px] text-white flex justify-center items-center rounded-full bg-slate-400'>{alphabet}</button>
           </li>
         ))}
       </ul>
@@ -32,7 +32,7 @@ const Home = () => {
         </ul>
       ) : (
         <ul className='flex flex-wrap gap-4 justify-center'>
-          {response?.drinks.map(drink => (
+          {response?.drinks?.map(drink => (
             <DrinkItem key={drink.idDrink} drink={drink} />
           ))}
         </ul>

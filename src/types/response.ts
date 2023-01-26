@@ -1,9 +1,9 @@
 export interface SearchResponse {
-  drinks: Drink[];
+  drinks: Drink[] | null;
 }
 
 export interface LookupFullResponse {
-  drinks: Drink[];
+  drinks: Drink[] | null;
 }
 
 export interface RandomResponse {

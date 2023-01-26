@@ -4,6 +4,7 @@ import Category from '../routes/Category';
 import Detail from '../routes/Detail';
 import Home from '../routes/Home';
 import Layout from '../routes/Layout';
+import Random from '../routes/Random';
 import Search from '../routes/Search';
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/category/:strCategory',
         element: <Category />,
+      },
+      {
+        path: '/random',
+        element: <Random />,
       },
     ],
     errorElement: <ErrorPage />,
