@@ -44,7 +44,7 @@ const Home = () => {
         </ul>
       )}
 
-      {!response?.drinks && <h2 className='font-bold text-center'>There is No Search Result...</h2>}
+      {!isLoading && !response?.drinks && <h2 className='font-bold text-center'>There is No Search Result...</h2>}
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AiFillHome } from 'react-icons/ai';
 import { BsSearch, BsArrowUp, BsGithub } from 'react-icons/bs';
+import { BiMenuAltLeft } from 'react-icons/bi';
 import ThemeSwitcher from '../ThemeSwitcher';
 import categories from '../../lib/categories';
 
@@ -40,9 +42,10 @@ const Header = () => {
             ref={categoryBtn}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className='p-2 w-[160px] text-left h-[50px]'
+            className='py-2 w-[160px] h-[50px] flex items-center gap-2 text-left'
           >
-            <p className='font-bold text-red-500'>Category</p>
+            <BiMenuAltLeft size={24} color='red' />
+            <p className='font-bold text-red-500 text-xl'>Category</p>
 
             <ul className='absolute left-4 top-full text-red-500 bg-slate-100 dark:bg-slate-600 border-t border-slate-200 dark:border-slate-900 shadow-md' style={{ visibility: isHover ? 'visible' : 'hidden' }}>
               {categories.map(category => (
@@ -56,11 +59,16 @@ const Header = () => {
           </button>
 
           {isScrolled && (
-            <div className='flex items-center gap-8'>
-              <Link to={'/search'} className='flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
-                <p className='w-[100px] text-left'>Search...</p>
-                <BsSearch />
+            <div className='flex items-center gap-4'>
+              <Link to={'/'}>
+                <AiFillHome size={24} color='red' />
               </Link>
+              <div className='flex items-center gap-8'>
+                <Link to={'/search'} className='flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
+                  <p className='w-[100px] text-left'>Search...</p>
+                  <BsSearch />
+                </Link>
+              </div>
             </div>
           )}
 
