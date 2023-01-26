@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BsSearch, BsCart } from 'react-icons/bs';
 import ThemeSwitcher from '../ThemeSwitcher';
+import categories from '../../lib/categories';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,8 +31,17 @@ const Header = () => {
           </Link>
         </div>
       </header>
+
       <div className='flex items-center sticky top-0 bg-white dark:bg-slate-800 shadow-md'>
         <div className='max-w-[1260px] h-[50px] mx-auto w-full px-4 py-2 flex justify-between items-center relative'>
+          <ul className='flex gap-4 text-red-500'>
+            {categories.map(category => (
+              <li key={category}>
+                <Link to={`/category/${encodeURIComponent(category)}`}>{category}</Link>
+              </li>
+            ))}
+          </ul>
+
           <Link to={'/random'} className='text-red-500'>
             Get Random
           </Link>
