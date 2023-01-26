@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BsSearch, BsCart, BsArrowUp } from 'react-icons/bs';
+import { BsSearch, BsArrowUp, BsGithub } from 'react-icons/bs';
 import ThemeSwitcher from '../ThemeSwitcher';
 import categories from '../../lib/categories';
 
@@ -70,7 +70,7 @@ const Header = () => {
             </Link>
             <ThemeSwitcher />
             <button>
-              <BsCart size={24} color='red' />
+              <BsGithub size={24} color='red' />
             </button>
           </div>
         </div>
