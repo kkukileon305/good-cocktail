@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import DrinkItem from '../components/items/DrinkItem';
+import DrinkItemSkeleton from '../components/items/DrinkItem.skeleton';
 import useFirstLetter from '../hooks/useFirstLetter';
 import alphabets from '../lib/alphabets';
 
@@ -13,12 +14,22 @@ const Home = () => {
       <ul className='my-4 flex justify-center gap-4 flex-wrap'>
         {alphabets.map(alphabet => (
           <li key={alphabet} onClick={() => setFirstLetter(alphabet)}>
-            <button className='px-2 py-1 rounded-full bg-slate-400'>{alphabet}</button>
+            <button className='w-[24px] h-[24px] flex justify-center items-center rounded-full bg-slate-400'>{alphabet}</button>
           </li>
         ))}
       </ul>
+
       {isLoading ? (
-        <p>Loading...</p>
+        <ul className='flex flex-wrap gap-4 justify-center'>
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+          <DrinkItemSkeleton />
+        </ul>
       ) : (
         <ul className='flex flex-wrap gap-4 justify-center'>
           {response?.drinks.map(drink => (
