@@ -1,5 +1,6 @@
 import { BsCart, BsSearch } from 'react-icons/bs';
 import { Link, Outlet } from 'react-router-dom';
+import ThemeSwitcher from '../components/ThemeSwitcher';
 
 const Layout = () => {
   return (
@@ -16,9 +17,12 @@ const Layout = () => {
             </Link>
           </div>
 
-          <button>
-            <BsCart size={24} color='red' />
-          </button>
+          <div className='flex items-center gap-4'>
+            <ThemeSwitcher />
+            <button>
+              <BsCart size={24} color='red' />
+            </button>
+          </div>
         </div>
       </header>
 
