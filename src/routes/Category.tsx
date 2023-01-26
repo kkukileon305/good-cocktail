@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import DrinkItem from '../components/items/DrinkItem';
 import DrinkItemSkeleton from '../components/items/DrinkItem.skeleton';
-import useCategory from '../hooks/useCategory';
+import useCategory from '../hooks/queries/useCategory';
 
 const Category = () => {
   const { strCategory } = useParams();

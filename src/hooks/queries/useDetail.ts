@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { SearchResponse } from '../types/response';
+import { SearchResponse } from '../../types/response';
 
 const useDetail = (idDrink: string) =>
   useQuery<SearchResponse>({

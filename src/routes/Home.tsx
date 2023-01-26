@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DrinkItem from '../components/items/DrinkItem';
 import DrinkItemSkeleton from '../components/items/DrinkItem.skeleton';
-import useFirstLetter from '../hooks/useFirstLetter';
+import useFirstLetter from '../hooks/queries/useFirstLetter';
 import alphabets from '../lib/alphabets';
 
 const Home = () => {

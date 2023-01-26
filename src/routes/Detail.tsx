@@ -1,12 +1,14 @@
 import { useParams } from 'react-router-dom';
 import Category from '../components/buttons/CategoryBtn';
-import useDetail from '../hooks/useDetail';
+import useDetail from '../hooks/queries/useDetail';
 
 const Detail = () => {
   const { idDrink } = useParams();
   const { data: response, isLoading } = useDetail(idDrink || '12345');
 
   if (!response || isLoading) return <div>Skeleton...</div>;
+
+  if (!response.drinks) return <div>No</div>;
 
   return (
     <div className='flex gap-4 justify-between'>

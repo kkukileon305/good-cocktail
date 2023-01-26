@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { FilterResponse } from '../types/response';
+import { FilterResponse } from '../../types/response';
 
 const useCategory = (category: string) =>
   useQuery<FilterResponse>({
