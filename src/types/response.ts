@@ -2,6 +2,19 @@ export interface SearchResponse {
   drinks: Drink[];
 }
 
+export interface LookupFullResponse {
+  drinks: Drink[];
+}
+
+export interface Ingredient {
+  idIngredient: string;
+  strIngredient: string;
+  strDescription: string;
+  strType: string;
+  strAlcohol: string;
+  strABV: null;
+}
+
 export interface Drink {
   idDrink: string;
   strDrink: string;
@@ -53,5 +66,15 @@ export interface Drink {
   strImageSource: string;
   strImageAttribution: string;
   strCreativeCommonsConfirmed: string;
-  dateModified: Date;
+  dateModified: string;
+}
+
+export interface FilterResponse {
+  drinks: ShortDrink[];
+}
+
+export interface ShortDrink {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
 }
