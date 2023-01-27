@@ -52,8 +52,6 @@ const Search = () => {
           )}
         </>
       )}
-
-      {!response && <h2 className='text-center font-bold text-2xl'>Search what you want!</h2>}
     </div>
   );
 };

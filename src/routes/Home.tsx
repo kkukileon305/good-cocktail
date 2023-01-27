@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import DrinkItem from '../components/items/DrinkItem';
 import DrinkItemSkeleton from '../components/skeletons/DrinkItem.skeleton';
 import useFirstLetter from '../hooks/queries/useFirstLetter';

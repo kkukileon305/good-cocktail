@@ -1,6 +1,6 @@
 import { BsArrowLeftShort } from 'react-icons/bs';
 import { useNavigate, useParams } from 'react-router-dom';
-import Category from '../components/buttons/CategoryBtn';
+import CategoryBtn from '../components/buttons/CategoryBtn';
 import DetailSkeleton from '../components/skeletons/Detail.skeleton';
 import useDetail from '../hooks/queries/useDetail';
 
@@ -21,7 +21,7 @@ const Detail = () => {
         </button>
         <div className='flex gap-4 items-end'>
           <h2 className='font-bold text-3xl'>{response.drinks[0].strDrink}</h2>
-          <Category category={response.drinks[0].strCategory} />
+          <CategoryBtn category={response.drinks[0].strCategory} />
         </div>
         <p className='mt-4'>{response.drinks[0].strInstructions}</p>
       </div>
