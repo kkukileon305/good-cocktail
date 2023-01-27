@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
-import { BsSearch, BsArrowUp, BsGithub } from 'react-icons/bs';
+import { BsSearch, BsArrowUp, BsCart } from 'react-icons/bs';
 import { BiMenuAltLeft, BiMenuAltRight } from 'react-icons/bi';
 import ThemeSwitcher from '../ThemeSwitcher';
 import categories from '../../lib/categories';
-import { useAppDispatch } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { setModal } from '../../store/slices/modalSlice';
 
 const Header = () => {
@@ -14,6 +14,7 @@ const Header = () => {
   const categoryBtn = useRef<HTMLButtonElement>(null);
 
   const dispatch = useAppDispatch();
+  const cart = useAppSelector(store => store.cart);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -85,8 +86,9 @@ const Header = () => {
               Random
             </Link>
             <ThemeSwitcher />
-            <button>
-              <BsGithub size={24} color='red' />
+            <button className='relative'>
+              <BsCart size={24} color='red' />
+              <span className='absolute left-4 bottom-2 font-bold text-white text-sm bg-red-500 rounded-full w-4 aspect-square flex justify-center items-center'>{cart.length}</span>
             </button>
             <Link to={'/search'} className='sm:hidden'>
               <BsSearch size={24} color='red' />
