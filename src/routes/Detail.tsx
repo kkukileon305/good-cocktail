@@ -25,7 +25,7 @@ const Detail = () => {
         </div>
         <p className='mt-4'>{response.drinks[0].strInstructions}</p>
       </div>
-      <img src={response?.drinks[0].strDrinkThumb} alt='' className='w-[200px] mx-auto text-center' />
+      <img src={response?.drinks[0].strDrinkThumb} alt='' className='w-[200px] mx-auto' />
     </div>
   );
 };

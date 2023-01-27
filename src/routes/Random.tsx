@@ -11,7 +11,7 @@ const Random = () => {
   if (!response || !response.drinks || isFetching) return <DetailSkeleton />;
 
   return (
-    <div className='flex flex-col sm:flex-row sm:gap-4 justify-between'>
+    <div className='flex flex-col sm:flex-row gap-4 justify-between'>
       <div className='sm:w-[calc(100%-216px)]'>
         <button className='border rounded-full border-black dark:border-white mb-4' onClick={() => navigate(-1)}>
           <BsArrowLeftShort size={32} />
