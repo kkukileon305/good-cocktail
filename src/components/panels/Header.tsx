@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
-import { BsSearch, BsArrowUp, BsGithub } from 'react-icons/bs';
-import { BiMenuAltLeft } from 'react-icons/bi';
+import { BsSearch, BsArrowUp, BsGithub, BsMenuApp } from 'react-icons/bs';
+import { BiMenuAltLeft, BiMenuAltRight } from 'react-icons/bi';
 import ThemeSwitcher from '../ThemeSwitcher';
 import categories from '../../lib/categories';
 
@@ -29,7 +29,7 @@ const Header = () => {
             <Link to={'/'}>Good Cocktail</Link>
           </h1>
 
-          <Link to={'/search'} className='flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
+          <Link to={'/search'} className='hidden sm:flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
             <p className='w-[100px] text-left'>Search...</p>
             <BsSearch />
           </Link>
@@ -37,12 +37,12 @@ const Header = () => {
       </header>
 
       <div className='flex items-center sticky top-0 bg-white dark:bg-slate-800 shadow-md'>
-        <div className='max-w-[1260px] h-[50px] mx-auto w-full px-4 flex justify-between items-center relative'>
+        <div className={`max-w-[1260px] h-[50px] mx-auto w-full px-4 flex justify-between sm:justify-between gap-4 items-center relative`}>
           <button //
             ref={categoryBtn}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className='py-2 w-[160px] h-[50px] flex items-center gap-2 text-left'
+            className='py-2 w-[160px] h-[50px] hidden sm:flex items-center gap-2 text-left'
           >
             <BiMenuAltLeft size={24} color='red' />
             <p className='font-bold text-red-500 text-xl'>Category</p>
@@ -58,12 +58,16 @@ const Header = () => {
             </ul>
           </button>
 
+          <Link to={'/'} className='flex sm:hidden'>
+            <AiFillHome size={24} color='red' />
+          </Link>
+
           {isScrolled && (
-            <div className='flex items-center gap-4'>
+            <div className='hidden sm:flex items-center gap-4'>
               <Link to={'/'}>
                 <AiFillHome size={24} color='red' />
               </Link>
-              <div className='flex items-center gap-8'>
+              <div className='hidden sm:flex items-center gap-8'>
                 <Link to={'/search'} className='flex gap-2 justify-start items-center border border-red-400 px-2 py-1 rounded '>
                   <p className='w-[100px] text-left'>Search...</p>
                   <BsSearch />
@@ -73,16 +77,23 @@ const Header = () => {
           )}
 
           <div className='flex items-center gap-4'>
-            <Link to={'/random'} className='text-red-500 font-bold'>
+            <Link to={'/random'} className='hidden sm:block text-red-500 font-bold'>
               Random
             </Link>
             <ThemeSwitcher />
             <button>
               <BsGithub size={24} color='red' />
             </button>
+            <Link to={'/search'} className='sm:hidden'>
+              <BsSearch size={24} color='red' />
+            </Link>
+            <button className='sm:hidden'>
+              <BiMenuAltRight size={24} color='red' />
+            </button>
           </div>
         </div>
       </div>
+
       {isScrolled && (
         <button //
           className='fixed right-4 bottom-4 bg-red-400 rounded-full p-2 text-white'
