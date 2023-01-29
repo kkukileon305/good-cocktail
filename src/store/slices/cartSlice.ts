@@ -6,7 +6,7 @@ type CartItem = {
   strDrink: string;
 };
 
-const initialState: CartItem[] = JSON.parse(localStorage.getItem('likes')) || [];
+const initialState: CartItem[] = JSON.parse(localStorage.getItem('likes') || '[]') as CartItem[];
 
 const cartSlice = createSlice({
   initialState,
