@@ -6,14 +6,24 @@ type CartItem = {
   strDrink: string;
 };
 
-const initialState: CartItem[] = [];
+const initialState: CartItem[] = JSON.parse(localStorage.getItem('likes')) || [];
 
 const cartSlice = createSlice({
   initialState,
   name: 'cart',
   reducers: {
-    addCart: (state, { payload }: PayloadAction<CartItem>) => [...state, payload],
-    removeCart: (state, { payload }: PayloadAction<string>) => state.filter(item => item.idDrink !== payload),
+    addCart: (state, { payload }: PayloadAction<CartItem>) => {
+      const addedCart = [...state, payload];
+
+      localStorage.setItem('likes', JSON.stringify(addedCart));
+      return addedCart;
+    },
+    removeCart: (state, { payload }: PayloadAction<string>) => {
+      const removedCart = state.filter(item => item.idDrink !== payload);
+
+      localStorage.setItem('likes', JSON.stringify(removedCart));
+      return removedCart;
+    },
     removeAll: () => [],
   },
 });

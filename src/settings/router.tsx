@@ -4,6 +4,7 @@ import Category from '../routes/Category';
 import Detail from '../routes/Detail';
 import Home from '../routes/Home';
 import Layout from '../routes/Layout';
+import Likes from '../routes/Likes';
 import Random from '../routes/Random';
 import Search from '../routes/Search';
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/random',
         element: <Random />,
+      },
+      {
+        path: '/likes',
+        element: <Likes />,
       },
     ],
     errorElement: <ErrorPage />,
