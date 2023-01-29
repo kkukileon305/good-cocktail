@@ -8,7 +8,7 @@ import useSearch from '../hooks/queries/useSearch';
 const Search = () => {
   const [searchParam] = useSearchParams();
   const navigate = useNavigate();
-  const debounce = useRef<NodeJS.Timeout>();
+  const debounce = useRef<ReturnType<typeof setTimeout>>();
   const { data: response, isLoading } = useSearch(searchParam.get('q') || '');
 
   const onChange: ChangeEventHandler<HTMLInputElement> = e => {
